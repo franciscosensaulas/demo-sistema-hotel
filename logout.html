@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logout – HotelSys</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background-color: #e0f2f1;
+      color: #333;
+    }
+    header {
+      background-color: #004d40;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .message {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-confirm {
+      background-color: #d32f2f;
+      color: #fff;
+    }
+    .btn-confirm:hover {
+      background-color: #b71c1c;
+    }
+    .btn-cancel {
+      background-color: #757575;
+      color: #fff;
+    }
+    .btn-cancel:hover {
+      background-color: #424242;
+    }
+    footer {
+      background-color: #00796b;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HotelSys</h1>
+  </header>
+
+  <main>
+    <p class="message">Tem certeza de que deseja sair da sua conta?</p>
+    <div class="buttons">
+      <button class="btn btn-confirm" onclick="location.href='logout-confirm.html'">
+        Confirmar Logout
+      </button>
+      <button class="btn btn-cancel" onclick="location.href='dashboard.html'">
+        Cancelar
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>

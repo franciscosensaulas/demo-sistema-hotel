@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HotelSys – Seu Hotel, Sua Gestão Simplificada</title>
+  <style>
+    :root {
+      --dark-green: #004d40;
+      --green: #00796b;
+      --light-bg: #f7f9f8;
+      --white: #ffffff;
+      --text: #333333;
+      --accent: #ff9800;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--light-bg); color: var(--text); }
+    header {
+      background: var(--dark-green);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { color: var(--white); font-size: 1.75rem; }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      position: relative;
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: var(--white);
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--dark-green);
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section h2 {
+      text-align: center;
+      color: var(--dark-green);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .feature {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .feature h3 { color: var(--green); margin-bottom: 1rem; font-size: 1.25rem; }
+    .feature p { font-size: 0.95rem; line-height: 1.5; }
+    .testimonials {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    .testimonial {
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .testimonial:last-child { margin-bottom: 0; }
+    .testimonial::before {
+      content: '“';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .testimonial p { font-style: italic; margin-bottom: 0.75rem; font-size: 1rem; }
+    .testimonial span { display: block; text-align: right; font-weight: bold; color: var(--dark-green); }
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .hero { height: 300px; }
+      .hero-content h2 { font-size: 2rem; }
+      .section { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HotelSys</h1>
+    <nav>
+      <a href="#features">Recursos</a>
+      <a href="#testimonials">Depoimentos</a>
+      <a href="/login.html">Entrar</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Seu Hotel, Nossa Plataforma</h2>
+      <p>Experimente gestão de reservas, controle de quartos e relatórios em uma interface moderna e intuitiva.</p>
+      <a href="/login.html" class="btn-primary">Teste Grátis Agora</a>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <h2>Recursos Poderosos</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Reservas Inteligentes</h3>
+        <p>Conexão automática com OTAs, prevenção de overbooking e confirmações instantâneas.</p>
+      </div>
+      <div class="feature">
+        <h3>Dashboard Dinâmico</h3>
+        <p>Análises em tempo real e exportação fácil para apoiar decisões rápidas.</p>
+      </div>
+      <div class="feature">
+        <h3>Controle de Quartos</h3>
+        <p>Status de limpeza e manutenção atualizados em segundos.</p>
+      </div>
+      <div class="feature">
+        <h3>Suporte Dedicado</h3>
+        <p>Equipe pronta 24/7 para garantir seu sucesso no HotelSys.</p>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <h2>O Que Nossos Clientes Dizem</h2>
+      <div class="testimonial">
+        <p>Em 2 meses, nossa ocupação aumentou 30% graças ao HotelSys!</p>
+        <span>— Maria Oliveira, Gerente do Hotel Vista Mar</span>
+      </div>
+      <div class="testimonial">
+        <p>Os relatórios detalhados nos ajudaram a otimizar processos e aumentar receita.</p>
+        <span>— Pedro Lima, Diretor do Resort Mar Azul</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 HotelSys. Todos os direitos reservados.</footer>
+</body>
+</html>

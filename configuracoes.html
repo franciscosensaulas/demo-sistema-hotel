@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurações – HotelSys</title>
+  <style>
+    :root {
+      --bg-color: #e0f2f1;
+      --text-color: #333;
+      --header-bg: #004d40;
+      --nav-link: #fff;
+      --section-bg: #fff;
+      --section-text: #333;
+      --btn-bg: #00796b;
+      --btn-hover: #005b40;
+      --footer-bg: #00796b;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      background-color: var(--header-bg);
+      color: var(--nav-link);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    .nav ul {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex; gap: 1rem;
+    }
+    .nav a {
+      color: var(--nav-link);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav a:hover,
+    .nav a:focus {
+      text-decoration: underline;
+    }
+
+    .btn {
+      background-color: var(--btn-bg);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: var(--btn-hover);
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+    .settings-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .settings-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--header-bg);
+    }
+
+    .settings-section {
+      background-color: var(--section-bg);
+      color: var(--section-text);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .settings-section h3 {
+      margin-top: 0;
+      color: var(--header-bg);
+      font-size: 1.2rem;
+    }
+    .settings-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.75rem 0;
+    }
+    .settings-item label {
+      font-size: 0.95rem;
+      color: var(--text-color);
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px; height: 24px;
+    }
+    .switch input {
+      opacity: 0; width: 0; height: 0;
+    }
+    .slider {
+      position: absolute; cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 24px;
+      transition: .4s;
+    }
+    .slider::before {
+      position: absolute; content: "";
+      height: 18px; width: 18px;
+      left: 3px; bottom: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: var(--btn-bg);
+    }
+    input:checked + .slider::before {
+      transform: translateX(26px);
+    }
+
+    .settings-item input[type="text"],
+    .settings-item input[type="password"],
+    .settings-item select {
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      background-color: #fff;
+      color: #000;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* DARK MODE OVERRIDES – mantém verdes */
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #004d40;     /* mesmo verde escuro */
+      --nav-link: #e0e0e0;
+      --section-bg: #263238;    /* tom neutro mas com contraste */
+      --section-text: #e0e0e0;
+      --btn-bg: #00796b;        /* mantém verde do botão */
+      --btn-hover: #005b40;     /* mantém hover verde */
+      --footer-bg: #00796b;     /* mantém footer verde */
+    }
+    body.dark-mode .settings-item input,
+    body.dark-mode .settings-item select {
+      background-color: #37474f;
+      color: #e0e0e0;
+      border: 1px solid #455a64;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Sistema de Hotelaria</h1>
+    <nav class="nav" role="navigation">
+      <ul>
+        <li><a href="dashboard.html">Início</a></li>
+        <li><a href="hospedes.html">Hóspedes</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="quartos.html">Quartos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="settings-header">
+      <h2>Configurações</h2>
+      <button class="btn" onclick="location.href='dashboard.html'">← Voltar</button>
+    </div>
+
+    <!-- Conta -->
+    <section class="settings-section">
+      <h3>Conta</h3>
+      <div class="settings-item">
+        <label for="userName">Nome de Usuário</label>
+        <input type="text" id="userName" value="admin">
+      </div>
+      <div class="settings-item">
+        <label for="userPassword">Alterar Senha</label>
+        <input type="password" id="userPassword" placeholder="Nova senha">
+      </div>
+    </section>
+
+    <!-- Preferências -->
+    <section class="settings-section">
+      <h3>Preferências</h3>
+      <div class="settings-item">
+        <label for="themeSelect">Tema</label>
+        <select id="themeSelect">
+          <option value="light">Claro</option>
+          <option value="dark">Escuro</option>
+        </select>
+      </div>
+      <div class="settings-item">
+        <label>Notificações por E‑mail</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="settings-item">
+        <label>Notificações SMS</label>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Sistema -->
+    <section class="settings-section">
+      <h3>Sistema</h3>
+      <div class="settings-item">
+        <label for="languageSelect">Idioma</label>
+        <select id="languageSelect">
+          <option value="pt">Português (BR)</option>
+          <option value="en">English (US)</option>
+        </select>
+      </div>
+      <div class="settings-item">
+        <label>Auto‑logout inativo</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="settings-item">
+        <label for="timeoutInput">Tempo de Inatividade (min)</label>
+        <input type="text" id="timeoutInput" value="15">
+      </div>
+    </section>
+
+    <button class="btn" onclick="alert('Configurações salvas!')">💾 Salvar Alterações</button>
+  </main>
+
+  <footer>
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const themeSelect = document.getElementById('themeSelect');
+    function applyTheme(theme) {
+      document.body.classList.toggle('dark-mode', theme === 'dark');
+    }
+    themeSelect.addEventListener('change', () => applyTheme(themeSelect.value));
+    window.addEventListener('DOMContentLoaded', () => applyTheme(themeSelect.value));
+  </script>
+</body>
+</html>

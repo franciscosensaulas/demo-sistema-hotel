@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços – HotelSys</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    /* cabeçalho e navegação */
+    .header {
+      background-color: #004d40;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav a:hover,
+    .nav a:focus {
+      text-decoration: underline;
+    }
+
+    /* conteúdo principal – serviços em lista flex */
+    .main {
+      flex: 1;
+      padding: 2rem;
+      background-color: #e0f2f1;
+    }
+    .services-header {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .services-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #004d40;
+    }
+    .btn {
+      background-color: #00796b;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: #005b40;
+    }
+    .services-container {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .services-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .service-item:last-child {
+      border-bottom: none;
+    }
+    .service-icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+      line-height: 1;
+    }
+    .service-details h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+      color: #004d40;
+    }
+    .service-details p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    /* rodapé */
+    .footer {
+      background-color: #00796b;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Sistema de Hotelaria</h1>
+    <div class="nav" role="navigation">
+      <ul>
+        <li><a href="dashboard.html">Início</a></li>
+        <li><a href="hospedes.html">Hóspedes</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="quartos.html">Quartos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="logout.html">Sair</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="services-header">
+      <h2>Serviços</h2>
+      <button class="btn" onclick="location.href='/servicos/novo'">
+        ➕ Adicionar Serviço
+      </button>
+    </div>
+
+    <div class="services-container">
+      <ul class="services-list">
+        <li class="service-item">
+          <span class="service-icon">📶</span>
+          <div class="service-details">
+            <h3>Wi‑Fi Gratuito</h3>
+            <p>Acesso ilimitado em todas as áreas do hotel.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">☕</span>
+          <div class="service-details">
+            <h3>Café da Manhã</h3>
+            <p>Buffet incluso com variedade de pães, frutas e bebidas.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">💆‍♀️</span>
+          <div class="service-details">
+            <h3>Spa e Massagem</h3>
+            <p>Pacotes de relaxamento e tratamentos corporais.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">🏋️‍♂️</span>
+          <div class="service-details">
+            <h3>Academia</h3>
+            <p>Equipamentos modernos disponíveis 24 horas.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">🏊‍♀️</span>
+          <div class="service-details">
+            <h3>Piscina</h3>
+            <p>Piscina coberta e piscina ao ar livre.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">🚗</span>
+          <div class="service-details">
+            <h3>Estacionamento</h3>
+            <p>Vaga privativa e serviço de manobrista.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">🛎️</span>
+          <div class="service-details">
+            <h3>Serviço de Quarto</h3>
+            <p>Cardápio disponível 24 horas no conforto do seu quarto.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <span class="service-icon">🚕</span>
+          <div class="service-details">
+            <h3>Transfer Aeroporto</h3>
+            <p>Traslado de e para o aeroporto com tarifas especiais.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </div>
+
+</body>
+</html>
