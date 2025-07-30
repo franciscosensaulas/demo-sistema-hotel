@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nova Reserva – HotelSys</title>
+    <link rel="stylesheet" href="../../css/admin/reservas/novo.css">
+</head>
+
+<body>
+    <header>
+        <h1>HotelSys</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="../dashboard">Início</a></li>
+                <li><a href="../hospedes">Hóspedes</a></li>
+                <li><a href="../reservas">Reservas</a></li>
+                <li><a href="../quartos">Quartos</a></li>
+                <li><a href="../servicos">Serviços</a></li>
+                <li><a href="../relatorios">Relatórios</a></li>
+                <li><a href="../configuracoes">Configurações</a></li>
+                <li><a href="../logout.html">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="new-reservation">
+            <form class="reserve-form" action="../reservas/salvar" method="POST">
+                <fieldset>
+                    <legend>Nova Reserva</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="guest">Hóspede</label>
+                            <select id="guest" name="guest" required>
+                                <option value="">Selecione o hóspede</option>
+                                <option value="1">Mariana Silva</option>
+                                <option value="2">João Pereira</option>
+                                <!-- população dinâmica -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="room">Quarto</label>
+                            <select id="room" name="room" required>
+                                <option value="">Selecione o quarto</option>
+                                <option value="101">101 – Solteiro</option>
+                                <option value="102">102 – Casal</option>
+                                <option value="201">201 – Família</option>
+                                <option value="202">202 – Luxo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkin">Check-in</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Check-out</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="guests">Número de Hóspedes</label>
+                            <input type="number" id="guests" name="guests" min="1" max="10" placeholder="Ex: 2"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn" onclick="location.href='../reservas'">Cancelar</button>
+                        <button type="submit" class="btn">Salvar Reserva</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 HotelSys. Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>

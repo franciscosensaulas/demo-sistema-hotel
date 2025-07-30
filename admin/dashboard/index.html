@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - HotelSys</title>
+  <link rel="stylesheet" href="../../css/admin/dashboard/index.css">
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Dashboard</h1>
+    <nav role="navigation">
+      <ul>
+        <li><a href="../dashboard/index.html">Início</a></li>
+        <li><a href="../hospedes/index.html">Hóspedes</a></li>
+        <li><a href="../reservas/index.html">Reservas</a></li>
+        <li><a href="../quartos/index.html">Quartos</a></li>
+        <li><a href="../servicos/index.html">Serviços</a></li>
+        <li><a href="../relatorios/index.html">Relatórios</a></li>
+        <li><a href="../configuracoes/index.html">Configurações</a></li>
+        <li><a href="../logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Hóspedes Ativos</h3>
+        <p>128</p>
+        <div class="footer">
+          <a href="../hospedes/index.html">Ver detalhes →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Reservas Hoje</h3>
+        <p>42</p>
+        <div class="footer">
+          <a href="../reservas/index.html">Ver detalhes →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quartos Ocupados</h3>
+        <p>76%</p>
+        <div class="footer">
+          <a href="../quartos/index.html">Ver detalhes →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Receita Mensal</h3>
+        <p>R$ 45.800</p>
+        <div class="footer">
+          <a href="/relatorios/ver/1">Ver relatório →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reservas Recentes movidas antes dos gráficos -->
+    <section class="recent-reservations">
+      <h2>Reservas Recentes</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Hóspede</th>
+              <th>Quarto</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>00127</td>
+              <td>Carla Souza</td>
+              <td>305</td>
+              <td>25/07/2025</td>
+              <td>30/07/2025</td>
+              <td><span class="badge badge-confirmada">Confirmada</span></td>
+            </tr>
+            <tr>
+              <td>00126</td>
+              <td>Pedro Lima</td>
+              <td>102</td>
+              <td>24/07/2025</td>
+              <td>28/07/2025</td>
+              <td><span class="badge badge-pendente">Pendente</span></td>
+            </tr>
+            <tr>
+              <td>00125</td>
+              <td>Mariana Dias</td>
+              <td>201</td>
+              <td>23/07/2025</td>
+              <td>26/07/2025</td>
+              <td><span class="badge badge-cancelada">Cancelada</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-container">
+        <h2>Receita Semanal</h2>
+        <canvas id="weeklyRevenueChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Distribuição de Receita</h2>
+        <canvas id="revenuePieChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Dados de exemplo
+    const weeklyLabels = ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'];
+    const weeklyData = [10000, 12000, 11000, 13000];
+
+    new Chart(document.getElementById('weeklyRevenueChart'), {
+      type: 'bar',
+      data: {
+        labels: weeklyLabels,
+        datasets: [{
+          label: 'Receita (R$)',
+          data: weeklyData,
+          backgroundColor: '#00796b'
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Pie chart: distribuição de receita
+    const pieLabels = ['Quartos', 'Serviços', 'Outros'];
+    const pieData = [70, 20, 10];
+
+    new Chart(document.getElementById('revenuePieChart'), {
+      type: 'pie',
+      data: {
+        labels: pieLabels,
+        datasets: [{
+          data: pieData
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

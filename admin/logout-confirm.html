@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obrigado - HotelSys</title>
+  <link rel="stylesheet" href="../css/admin/logout-confirm.css">
+</head>
+
+<body>
+  <main>
+    <h1>Obrigado por usar o HotelSys!</h1>
+    <p>Você será redirecionado para o login em <span id="countdown">5</span> segundos.</p>
+    <button class="btn" onclick="redirectNow()">Ir para Login Agora</button>
+  </main>
+
+  <script>
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        redirectNow();
+      }
+    }, 1000);
+
+    function redirectNow() {
+      window.location.href = '../login.html';
+    }
+  </script>
+</body>
+
+</html>

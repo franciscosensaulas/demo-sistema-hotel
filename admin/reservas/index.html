@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas - HotelSys</title>
+  <link rel="stylesheet" href="../../css/admin/reservas/index.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Sistema de Hotelaria</h1>
+    <nav role="navigation">
+      <ul>
+        <li><a href="../dashboard/index.html">Início</a></li>
+        <li><a href="../hospedes/index.html">Hóspedes</a></li>
+        <li><a href="../reservas/index.html">Reservas</a></li>
+        <li><a href="../quartos/index.html">Quartos</a></li>
+        <li><a href="../servicos/index.html">Serviços</a></li>
+        <li><a href="../relatorios/index.html">Relatórios</a></li>
+        <li><a href="../configuracoes/index.html">Configurações</a></li>
+        <li><a href="../logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="reservas-header">
+      <h2>Reservas</h2>
+      <button class="btn" onclick="location.href='../reservas/novo.html'">➕ Nova Reserva</button>
+    </div>
+
+    <div class="filter-bar">
+      <input type="date" id="fromDate" placeholder="Data início">
+      <input type="date" id="toDate" placeholder="Data fim">
+      <button class="btn" onclick="filtrarReservas()">Filtrar</button>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Cartão de Reserva Exemplo -->
+      <div class="reservation-card">
+        <div class="card-header">Reserva #00123</div>
+        <div class="card-body">
+          <p><strong>Hóspede:</strong> Ana Costa</p>
+          <p><strong>Quarto:</strong> 202 (Casal)</p>
+          <p><strong>Check-in:</strong> 28/07/2025</p>
+          <p><strong>Check-out:</strong> 02/08/2025</p>
+          <p><strong>Convidados:</strong> 2 adultos</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='/reservas/editar/123'">✏️ Editar</button>
+          <button class="btn"
+            onclick="if(confirm('Cancelar reserva #00123?')) location.href='/reservas/cancelar/123'">🗑️
+            Cancelar</button>
+        </div>
+      </div>
+      <!-- Você pode duplicar este bloco para outras reservas -->
+      <div class="reservation-card">
+        <div class="card-header">Reserva #00124</div>
+        <div class="card-body">
+          <p><strong>Hóspede:</strong> Bruno Silva</p>
+          <p><strong>Quarto:</strong> 305 (Solteiro)</p>
+          <p><strong>Check-in:</strong> 30/07/2025</p>
+          <p><strong>Check-out:</strong> 01/08/2025</p>
+          <p><strong>Convidados:</strong> 1 adulto</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='/reservas/editar/124'">✏️ Editar</button>
+          <button class="btn"
+            onclick="if(confirm('Cancelar reserva #00124?')) location.href='/reservas/cancelar/124'">🗑️
+            Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function filtrarReservas() {
+      const from = document.getElementById('fromDate').value;
+      const to = document.getElementById('toDate').value;
+      alert(`Filtrar de ${from || 'início'} até ${to || 'fim'}`);
+    }
+  </script>
+</body>
+
+</html>

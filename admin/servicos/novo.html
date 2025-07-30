@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adicionar Serviço – HotelSys</title>
+  <link rel="stylesheet" href="../../css/admin/servicos/novo.css">
+  <link rel="stylesheet" href="../css/cores.css">
+  <link rel="stylesheet" href="../css/servicos/novo.css">
+</head>
+
+<body>
+  <header>
+    <h1>Sistema de Hotelaria</h1>
+    <nav role="navigation">
+      <ul>
+        <li><a href="../dashboard">Início</a></li>
+        <li><a href="../hospedes">Hóspedes</a></li>
+        <li><a href="../reservas">Reservas</a></li>
+        <li><a href="../quartos">Quartos</a></li>
+        <li><a href="../servicos">Serviços</a></li>
+        <li><a href="../relatorios">Relatórios</a></li>
+        <li><a href="../configuracoes">Configurações</a></li>
+        <li><a href="../logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="servicos-header">
+      <h2>Adicionar Serviço</h2>
+      <button class="btn-cancel" onclick="location.href='../servicos'">← Voltar</button>
+    </div>
+
+    <div class="form-container">
+      <form action="/servicos/salvar" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nome">Nome do Serviço</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Transfer Aeroporto" required>
+          </div>
+          <div class="form-group">
+            <label for="icone">Ícone/Emoji</label>
+            <input type="text" id="icone" name="icone" placeholder="Ex: 🚕" maxlength="2">
+          </div>
+          <div class="form-group">
+            <label for="preco">Preço (R$)</label>
+            <input type="number" id="preco" name="preco" step="0.01" placeholder="Ex: 150.00" required>
+          </div>
+          <div class="form-group full">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Detalhes do serviço..." required></textarea>
+          </div>
+          <div class="form-group full">
+            <label><input type="checkbox" id="ativo" name="ativo" checked> Serviço Ativo</label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="location.href='../servicos'">Cancelar</button>
+          <button type="submit" class="btn-submit">Salvar Serviço</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HotelSys. Todos os direitos reservados.
+  </footer>
+</body>
+
+</html>
