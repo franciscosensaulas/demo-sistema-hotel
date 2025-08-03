@@ -2,72 +2,82 @@
 @import url("../shared/page.css");
 @import url("../shared/header.css");
 @import url("../shared/footer.css");
-
+/* Container do cabeçalho dos quartos */
 .quartos-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    display: flex;               /* Define o elemento como flex container para organizar seus filhos em linha */
+    align-items: center;         /* Alinha verticalmente os itens ao centro do eixo cruzado */
+    justify-content: space-between; /* Distribui os itens horizontalmente com espaço igual entre eles */
+    margin-bottom: 1rem;         /* Espaço de 1rem abaixo do cabeçalho */
 }
 
+/* Estilo para o título (h2) dentro do cabeçalho */
 .quartos-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--header-bg);
+    margin: 0;                   /* Remove margens padrão do elemento */
+    font-size: 1.5rem;           /* Define o tamanho da fonte em 1.5 vezes o tamanho base */
+    color: var(--header-bg);     /* Aplica cor definida na variável CSS --header-bg */
 }
 
+/* Classe genérica de botão */
 .btn {
-    background-color: var(--btn-bg);
-    color: var(--text-light);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
+    background-color: var(--btn-bg); /* Fundo do botão usando a variável --btn-bg */
+    color: var(--text-light);     /* Cor do texto usando a variável --text-light */
+    border: none;                 /* Remove borda padrão */
+    padding: 0.5rem 1rem;         /* Espaçamento interno: 0.5rem em cima/baixo e 1rem nas laterais */
+    border-radius: 4px;           /* Arredonda cantos com raio de 4px */
+    font-size: 1rem;              /* Tamanho da fonte igual ao tamanho base */
+    cursor: pointer;              /* Cursor muda para indicar que é clicável */
 }
 
+/* Estado hover e foco do botão */
 .btn:hover,
 .btn:focus {
-    background-color: var(--btn-hover);
+    background-color: var(--btn-hover); /* Muda o fundo para a cor definida em --btn-hover */
 }
 
+/* Wrapper que permite rolagem horizontal se o conteúdo extrapolar */
 .grid-wrapper {
-    overflow-x: auto;
+    overflow-x: auto;            /* Mostra barra de rolagem horizontal quando necessário */
 }
 
+/* Grid que organiza os cards de quarto */
 .grid-quartos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    display: grid;               /* Define o container como grid layout */
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+    gap: 1rem;                   /* Espaço de 1rem entre linhas e colunas */
 }
 
+/* Estilo para cada card de quarto */
 .quarto-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: var(--card-bg); /* Cor de fundo do card usando --card-bg */
+    border: 1px solid var(--border-color); /* Borda de 1px sólida com cor da variável --border-color */
+    border-radius: 4px;           /* Cantos arredondados com raio de 4px */
+    padding: 1rem;                /* Espaço interno de 1rem em todas as direções */
+    display: flex;                /* Define o card como flex container */
+    flex-direction: column;       /* Organiza filhos do card em coluna */
+    justify-content: space-between; /* Espalha itens verticalmente, ocupando todo o espaço disponível */
 }
 
+/* Seção de informações dentro do card */
 .quarto-info {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;          /* Espaço de 1rem abaixo da seção de informações */
 }
 
+/* Título (h3) dentro da seção de informações */
 .quarto-info h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.25rem;
-    color: var(--header-bg);
+    margin: 0 0 0.5rem;           /* Remove margens superior e laterais, adiciona 0.5rem abaixo */
+    font-size: 1.25rem;           /* Tamanho da fonte em 1.25 vezes o tamanho base */
+    color: var(--header-bg);      /* Cor do texto usando a variável --header-bg */
 }
 
+/* Parágrafos dentro da seção de informações */
 .quarto-info p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
+    margin: 0.25rem 0;            /* Margem vertical de 0.25rem, sem margem lateral */
+    font-size: 0.9rem;            /* Fonte um pouco menor que o tamanho base para textos de apoio */
 }
 
+/* Ações disponíveis no card (botões, links, etc.) */
 .card-actions {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
+    display: flex;                /* Define a área de ações como flex container */
+    gap: 0.5rem;                  /* Espaço de 0.5rem entre cada ação */
+    justify-content: flex-end;    /* Alinha as ações à direita do container */
 }

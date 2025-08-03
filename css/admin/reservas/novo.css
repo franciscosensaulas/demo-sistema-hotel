@@ -9,16 +9,6 @@ div#new-reservation {
     padding: 2rem;
 }
 
-.btn {
-    background-color: var(--btn-bg);
-    color: var(--text-light);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
 form.reserve-form {
     background: var(--card-bg);
     padding: 2rem;
